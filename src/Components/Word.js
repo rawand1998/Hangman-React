@@ -1,9 +1,12 @@
-import React from 'react'
-
+import React,{useContext} from 'react'
+import {ContextData} from '../context/ContextLetter'
 function Word() {
+    const {words}=useContext(ContextData)
+    console.log(words)
+   
   return (
  
-    <div class="word" id="word"></div>
+    <div className="word" id="word"></div>
    
   )
 }
