@@ -1,7 +1,8 @@
 import React,{useContext,useEffect} from 'react'
 import {ContextData} from '../context/ContextLetter'
+import {showNotification as show} from '../helper/helper'
 function WrongWordLetter() {
-    const {wrongWord,selectedWord,correctWord,palyable,setWrongWord,setCorrectWord}=useContext(ContextData)
+    const {wrongWord,selectedWord,correctWord,palyable,setWrongWord,setCorrectWord,setShowNotification}=useContext(ContextData)
     console.log(wrongWord)
     useEffect(() => {
         const handleKeydown = event => {
@@ -12,13 +13,13 @@ function WrongWordLetter() {
               if (!correctWord.includes(letter)) {
                 setCorrectWord(currentLetters => [...currentLetters, letter]);
               } else {
-                // show(setShowNotification);
+                show(setShowNotification);
               }
             } else {
               if (!wrongWord.includes(letter)) {
                 setWrongWord(currentLetters => [...currentLetters, letter]);
               } else {
-                // show(setShowNotification);
+                show(setShowNotification);
               }
             }
           }
