@@ -9,7 +9,7 @@ export const  ContextLetter =({children})=>{
     const [palyable,setPalyable] = useState(false);
     const [noification,setShowNotification] = useState(false);
    return(
-       <ContextData.Provider value={{selectedWord,words,correctWord,wrongWord,palyable,setCorrectWord,setWrongWord,setShowNotification}}>
+       <ContextData.Provider value={{selectedWord,words,correctWord,wrongWord,palyable,setCorrectWord,setWrongWord,setShowNotification,setPalyable}}>
            {children}
        </ContextData.Provider>
    )
